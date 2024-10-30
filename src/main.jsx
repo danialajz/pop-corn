@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import "./index.css";
-import StarRainting from "./StarRainting.jsx";
+import "../src//css/index.css";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./Navbar";
-import MainBar from "./MainBar";
-import Search from "./Search";
-import Logo from "./Logo";
-import Numresault from "./Numresault";
-import List from "./List";
-import Box from "./Box";
-import Summery from "./Summery";
-import MovieList from "./MovieList";
-import Loader from "./Loader";
-import ErrorMessage from "./ErrorMessage";
-import SelectedMovie from "./SelectedMovie";
-import UseMovie from "./UseMovie";
+import Navbar from "./Ui/Navbar";
+import MainBar from "./Ui/MainBar";
+import Search from "./Movie/Search";
+import Logo from "./Ui/Logo";
+import Numresault from "./Ui/Numresault";
+import List from "./Movie/List";
+import Box from "./Ui/Box";
+import Summery from "./Ui/Summery";
+import MovieList from "./Movie/MovieList";
+import Loader from "./Ui/Loader";
+import ErrorMessage from "./Ui/ErrorMessage";
+import SelectedMovie from "./Movie/SelectedMovie";
+import UseMovie from "./hooks/UseMovie";
 
 // const tempMovieData = [
 //   {
