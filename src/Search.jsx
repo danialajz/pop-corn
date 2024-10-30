@@ -3,8 +3,16 @@ import React, { useEffect, useRef } from "react";
 function Search({ query, setQuery }) {
   const inputEl = useRef(null);
   useEffect(function () {
-    inputEl.current.focus();
-  }, []);
+    function callback(e) {
+      if (document.addEventListener === inputEl.current) return;
+      if (e.code === "Enter") {
+        inputEl.current.focus();
+        setQuery("");
+      }
+    }
+    document.addEventListener("keydown", callback);
+    return () => document.addEventListener("keydown", callback);
+  }, [setQuery]);
   // useEffect(
   //   function () {
   //     const el = document.querySelector(".search");
