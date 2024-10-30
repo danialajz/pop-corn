@@ -12,6 +12,8 @@ import Loader from "./Ui/Loader";
 import ErrorMessage from "./Ui/ErrorMessage";
 import SelectedMovie from "./Movie/SelectedMovie";
 import UseMovie from "./hooks/UseMovie";
+import UseLocalStorageState from "./hooks/UseLocalStorageState";
+import UseKey from "./hooks/UseKey";
 
 // const tempMovieData = [
 //   {
@@ -65,9 +67,10 @@ const average = (arr) =>
 
 function App() {
   const [query, setQuery] = useState("");
-  const [watched, setWatched] = useState([]);
+  // const [watched, setWatched] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const { movies, isLoading, error } = UseMovie(query);
+  const [watched, setWatched] = UseLocalStorageState([], "watched");
 
   // const tempQuery = "interstellari";
   function handelSelectMovie(id) {
@@ -84,13 +87,7 @@ function App() {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   }
 
-  useEffect(function () {
-    document.addEventListener("keydown", function (e) {
-      if (e.code === "Escape") {
-        handelCloseMovie();
-      }
-    });
-  });
+  UseKey("Escape", handelCloseMovie );
 
   return (
     <>
